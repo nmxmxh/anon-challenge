@@ -5,7 +5,7 @@ import { Inter } from "next/font/google";
 import Providers from "@/lib/providers";
 import GlobalStyles from "@/styles/global";
 
-const inter = Inter();
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
   title: "Upbound Challenge | Nobert",

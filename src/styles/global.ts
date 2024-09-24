@@ -2,8 +2,6 @@
 
 import { createGlobalStyle } from "styled-components";
 
-
-
 export const GlobalStyles = createGlobalStyle`
 :root {
   --width: 85%;
@@ -34,6 +32,11 @@ export const GlobalStyles = createGlobalStyle`
   border: 0;
   padding: 0;
   margin: 0;
+  font-family: var(--font-inter);
+}
+
+h1 {
+  font-family: var(--font-inter);
 }
 
 html,
@@ -42,6 +45,8 @@ body {
   margin: 0;
   padding: 0;
   outline: none;
+  font-family: var(--font-inter);
+  background-color: #F9FAFA;
   
   scroll-behavior: smooth !important;
   /* https://github.com/vercel/next.js/issues/51721 */
