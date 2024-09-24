@@ -28,8 +28,6 @@ export function RecursiveView({
     return isObject(value) || isArray(value);
   }
 
-  console.log($active);
-
   return (
     <Style.Container className="details" {...fadeInAnim} key={path} $active={$active}>
       {Object.entries(data).map(([key, value]) => {
