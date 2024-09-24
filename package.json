@@ -11,7 +11,11 @@
   "dependencies": {
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.13"
+    "next": "14.2.13",
+    "framer-motion": "^11.2.10",
+    "lodash": "^4.17.21",
+    "motion": "^10.18.0",
+    "styled-components": "^6.1.11"
   },
   "devDependencies": {
     "typescript": "^5",
@@ -19,6 +23,17 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
-    "eslint-config-next": "14.2.13"
+    "eslint-config-next": "14.2.13",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "eslint-plugin-storybook": "^0.8.0",
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "husky": "^9.1.4",          
+    "lint-staged": "^15.2.9",
+    "prettier": "^3.3.3",
+    "@types/lodash": "^4.17.7",
+    "@typescript-eslint/eslint-plugin": "^8.5.0",
+    "@typescript-eslint/parser": "^8.5.0"
   }
 }
