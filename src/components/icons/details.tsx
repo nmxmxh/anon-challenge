@@ -1,4 +1,4 @@
-import { IconProps } from "@/types/icons";
+import type { IconProps } from "@/types/icons";
 
 const DetailsIcon = (props: IconProps) => (
   <svg

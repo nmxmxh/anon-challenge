@@ -1,7 +1,8 @@
 import { isArray, isObject } from "lodash";
-import styled from "styled-components";
-import DownIcon from "./icons/down";
 import { Inter } from "next/font/google";
+import styled from "styled-components";
+
+import DownIcon from "./icons/down";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 

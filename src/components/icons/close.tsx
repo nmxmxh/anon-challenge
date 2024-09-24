@@ -1,4 +1,4 @@
-import { IconProps } from "@/types/icons";
+import type { IconProps } from "@/types/icons";
 
 const CloseIcon = (props: IconProps) => (
   <svg preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16" fill="none" {...props}>

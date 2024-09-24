@@ -1,10 +1,9 @@
 import { Inter } from "next/font/google";
 import styled from "styled-components";
-import _ from "lodash";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
-export function TextArea({ value, setData }: any) {
+export function TextArea({ value }: { value: unknown }) {
   return (
     <Style.Container
       disabled

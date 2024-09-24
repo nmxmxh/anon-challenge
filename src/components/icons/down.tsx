@@ -1,4 +1,4 @@
-import { IconProps } from "@/types/icons";
+import type { IconProps } from "@/types/icons";
 
 const DownIcon = (props: IconProps) => (
   <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 8 4" fill="none" {...props}>

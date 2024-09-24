@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import type { PropsWithChildren } from "react";
 import { Inter } from "next/font/google";
+import type { PropsWithChildren } from "react";
 
 import Providers from "@/lib/providers";
 import GlobalStyles from "@/styles/global";

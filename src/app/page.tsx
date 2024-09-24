@@ -1,15 +1,15 @@
 "use client";
 
-import CloseIcon from "@/components/icons/close";
-import DetailsIcon from "@/components/icons/details";
-
-import styled from "styled-components";
-import { RecursiveView } from "@/components/recursive-view";
-import { Title } from "@/components/title";
-import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { Inter } from "next/font/google";
+import { useState } from "react";
+import styled from "styled-components";
+
+import CloseIcon from "@/components/icons/close";
+import DetailsIcon from "@/components/icons/details";
+import { RecursiveView } from "@/components/recursive-view";
 import { TextArea } from "@/components/text-area";
+import { Title } from "@/components/title";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -72,7 +72,7 @@ const dummy_data: unknown | unknown[] = [
   },
 ];
 
-let initialState: { [key: string]: string } = {
+const initialState: { [key: string]: string } = {
   root: "shown",
 };
 
@@ -80,7 +80,7 @@ export default function Home() {
   const [expanded, setExpanded] = useState({
     ...initialState,
   });
-  const [data, setData] = useState({
+  const [data] = useState({
     jsonOrArray: dummy_data,
   });
 
@@ -95,7 +95,7 @@ export default function Home() {
     <Style.Container className={inter.className}>
       <section className="cell-input">
         <h1 className={inter.className}>json example</h1>
-        <TextArea value={data.jsonOrArray} setData={setData} />
+        <TextArea value={data.jsonOrArray} />
       </section>
       <section className="cell-details">
         <header>
@@ -124,6 +124,7 @@ export default function Home() {
                 data={data.jsonOrArray}
                 path="root"
                 key="root"
+                $active={expanded["root"] === "shown"}
               />
             )}
           </AnimatePresence>
@@ -169,13 +170,24 @@ const Style = {
       overflow: hidden;
 
       div.content {
-        height: calc(100% - 125px);
+        height: max-content;
         width: calc(100% - 30px);
         margin: auto;
         margin-top: 25px;
         display: flex;
         flex-direction: column;
         overflow-y: scroll;
+        position: relative;
+
+        &::after {
+          content: "";
+          top: 30px;
+          left: 12px;
+          height: calc(100% - 30px);
+          position: absolute;
+          width: 1px;
+          background-color: rgba(0, 0, 0, 0.1);
+        }
       }
 
       header {

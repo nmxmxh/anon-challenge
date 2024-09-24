@@ -1,16 +1,19 @@
+import { AnimatePresence, motion } from "framer-motion";
 import { isArray, isObject } from "lodash";
-import { Fragment, Key, useState } from "react";
+import { Fragment } from "react";
 import styled from "styled-components";
+
+import { fadeInAnim } from "@/styles/animations/simple-fade";
+
 import DataTypeIcon from "./icons/data-type";
 import { Title } from "./title";
-import { AnimatePresence, motion } from "framer-motion";
-import { fadeInAnim } from "@/styles/animations/simple-fade";
 
 export function RecursiveView({
   data,
   path = "root",
   handleClick,
   expanded,
+  $active,
 }: {
   data: unknown;
   path: string;
@@ -18,16 +21,19 @@ export function RecursiveView({
   expanded: {
     [x: string]: string;
   };
+  $active: boolean;
 }) {
   if (!data) return null;
-  function isArrayOrObject(value: any): boolean {
+  function isArrayOrObject(value: unknown): boolean {
     return isObject(value) || isArray(value);
   }
 
+  console.log($active);
+
   return (
-    <Style.Container className="details" {...fadeInAnim} key={path}>
+    <Style.Container className="details" {...fadeInAnim} key={path} $active={$active}>
       {Object.entries(data).map(([key, value]) => {
-        let currentPath = path ? `${path}.${key}` : "root";
+        const currentPath = path ? `${path}.${key}` : "root";
 
         if (isArrayOrObject(value)) {
           return (
@@ -46,6 +52,7 @@ export function RecursiveView({
                     path={currentPath}
                     key={currentPath}
                     handleClick={handleClick}
+                    $active={expanded[currentPath] === "shown"}
                   />
                 )}
               </AnimatePresence>
@@ -57,7 +64,7 @@ export function RecursiveView({
               <DataTypeIcon />
               <p>
                 {key}
-                <span>{value as any}</span>
+                <span>{value}</span>
               </p>
             </figure>
           );
@@ -68,8 +75,20 @@ export function RecursiveView({
 }
 
 const Style = {
-  Container: styled(motion.article)`
-    margin-left: 40px;
+  Container: styled(motion.article)<{ $active: boolean }>`
+    padding-left: 40px;
+    height: 100%;
+    position: relative;
+
+    &::after {
+      content: "";
+      top: 0px;
+      left: 12px;
+      height: 95%;
+      position: absolute;
+      width: 1px;
+      background-color: rgba(0, 0, 0, 0.1);
+    }
 
     figure {
       margin: 7.5px 0;
