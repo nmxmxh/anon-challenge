@@ -17,12 +17,10 @@ export function TextArea({ value }: { value: unknown }) {
 
 const Style = {
   Container: styled.textarea`
-    width: 95%;
+    width: 99%;
     margin-top: 0.5vh;
-    border-radius: 8px;
     background-color: white;
-    min-height: 65vh;
-    padding: 25px;
+    min-height: 70vh;
     line-height: 155%;
     color: #737474;
     resize: none;

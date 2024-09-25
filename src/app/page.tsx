@@ -161,6 +161,8 @@ const Style = {
         padding: 10px 15px;
         border: 0.5px solid rgba(0, 0, 0, 0.1);
         background-color: white;
+        border-radius: 8px;
+        overflow: hidden;
       }
 
       h1 {
