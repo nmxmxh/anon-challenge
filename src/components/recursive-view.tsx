@@ -23,10 +23,10 @@ export function RecursiveView({
   };
   $active: boolean;
 }) {
-  if (!data) return null;
   function isArrayOrObject(value: unknown): boolean {
     return isObject(value) || isArray(value);
   }
+  if (!data || !isArrayOrObject(data)) return null;
 
   return (
     <Style.Container className="details" {...fadeInAnim} key={path} $active={$active}>
