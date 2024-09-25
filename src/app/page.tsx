@@ -95,7 +95,9 @@ export default function Home() {
     <Style.Container className={inter.className}>
       <section className="cell-input">
         <h1 className={inter.className}>json example</h1>
-        <TextArea value={data.jsonOrArray} />
+        <div className="text-area">
+          <TextArea value={data.jsonOrArray} />
+        </div>
       </section>
       <section className="cell-details">
         <header>
@@ -151,6 +153,15 @@ const Style = {
       margin-right: 15vw;
       padding: 24px;
       padding-top: 15vh;
+
+      .text-area {
+        height: 75vh;
+        margin-top: 2.5vh;
+        width: 100%;
+        padding: 10px 15px;
+        border: 0.5px solid rgba(0, 0, 0, 0.1);
+        background-color: white;
+      }
 
       h1 {
         display: flex;
