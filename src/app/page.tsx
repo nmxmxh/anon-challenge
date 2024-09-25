@@ -172,6 +172,7 @@ const Style = {
       div.content {
         height: max-content;
         width: calc(100% - 30px);
+        max-height: 80vh;
         margin: auto;
         margin-top: 25px;
         display: flex;
@@ -181,7 +182,7 @@ const Style = {
 
         &::after {
           content: "";
-          top: 30px;
+          bottom: 0px;
           left: 12px;
           height: calc(100% - 30px);
           position: absolute;

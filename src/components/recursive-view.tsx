@@ -80,9 +80,9 @@ const Style = {
 
     &::after {
       content: "";
-      top: 0px;
+      bottom: 5%;
       left: 12px;
-      height: 95%;
+      height: 92.5%;
       position: absolute;
       width: 1px;
       background-color: rgba(0, 0, 0, 0.1);
