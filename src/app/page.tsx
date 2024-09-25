@@ -115,7 +115,7 @@ export default function Home() {
           <Title
             expanded={expanded["root"] === "shown"}
             value={data.jsonOrArray}
-            text="Company"
+            text="Data"
             handleClick={() => toggleExpand("root")}
           />
           <AnimatePresence key="root">
