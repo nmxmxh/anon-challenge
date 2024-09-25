@@ -33,6 +33,7 @@ const Style = {
     color: #1f2020;
     text-transform: capitalize;
     height: 30px;
+    min-height: 30px;
 
     svg {
       height: 8px;

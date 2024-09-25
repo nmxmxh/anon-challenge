@@ -89,16 +89,13 @@ const Style = {
     }
 
     figure {
-      margin: 7.5px 0;
+      height: 30px;
       font-size: 15px;
       display: flex;
       font-weight: 500;
+      align-items: center;
       color: #1f2020;
       text-transform: capitalize;
-
-      p {
-        margin-top: 2px;
-      }
 
       span {
         margin-left: 10px;

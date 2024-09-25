@@ -197,7 +197,6 @@ const Style = {
           content: "";
           bottom: 0px;
           left: 12px;
-          height: calc(100% - 30px);
           position: absolute;
           width: 1px;
           background-color: rgba(0, 0, 0, 0.1);
