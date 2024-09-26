@@ -1,10 +1,11 @@
 import { isArray, isObject } from "lodash";
-import { Inter } from "next/font/google";
+import { Inter, Roboto_Mono } from "next/font/google";
 import styled from "styled-components";
 
 import DownIcon from "./icons/down";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const roboto_mono = Roboto_Mono({ subsets: ["latin"], variable: "--font-roboto-mono" });
 
 export function Title({
   value,
@@ -20,7 +21,9 @@ export function Title({
   return (
     <Style.Container className={inter.className} onClick={handleClick} $expanded={!expanded}>
       <DownIcon /> <p>{text}</p>
-      <span>[{isArray(value) ? value.length : isObject(value) ? Object.keys(value).length : "0"} items]</span>
+      <span className={roboto_mono.className}>
+        [{isArray(value) ? value.length : isObject(value) ? Object.keys(value).length : "0"} items]
+      </span>
     </Style.Container>
   );
 }
@@ -46,6 +49,7 @@ const Style = {
     p {
       margin-left: 15px;
       margin-right: 5px;
+      min-width: 15px;
     }
 
     span {
